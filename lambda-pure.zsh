@@ -153,7 +153,7 @@ prompt_pure_preprompt_render() {
 	# NodeJS version
 	local rpreprompt
 	if (( ${PURE_NODE_ENABLED:-1} )); then
-	    rpreprompt+="%F{green}⬢ ${prompt_pure_node_version}%f"
+	    rpreprompt+="%F{green}${PURE_NODE_SYMBOL:=⬢} ${prompt_pure_node_version}%f"
 	fi
 
 	integer preprompt_left_length preprompt_right_length space_length

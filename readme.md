@@ -111,6 +111,10 @@ Defines the git up arrow symbol. The default value is `▲`.
 
 Defines the git dirty symbol. The default value is `×`.
 
+### `PURE_NODE_SYMBOL`
+
+Defines the NodeJS symbol. The default value is `⬢`.
+
 ### `PURE_NODE_ENABLED`
 
 Set `PURE_NODE_ENABLED=0` to not display the NodeJS version.
