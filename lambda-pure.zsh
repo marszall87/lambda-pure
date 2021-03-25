@@ -332,7 +332,7 @@ prompt_pure_async_callback() {
             local exec_time=$4
         else
             local output=
-            local exec_tim=$3
+            local exec_time=$3
         fi
 
 	case "${job}" in
