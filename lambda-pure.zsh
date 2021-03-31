@@ -304,7 +304,10 @@ prompt_pure_async_tasks() {
 		prompt_pure_current_working_tree="x${working_tree}"
 	fi
 
-	async_job "prompt_pure" prompt_pure_async_node "$PATH"
+	# only perform task if node is enabled in PS1
+	if (( ${PURE_NODE_ENABLED:-1} )); then
+	    async_job "prompt_pure" prompt_pure_async_node "$PATH"
+	fi
 
 	# only perform tasks inside git working tree
 	[[ -n $working_tree ]] || return
@@ -322,7 +325,6 @@ prompt_pure_async_tasks() {
 		# check check if there is anything to pull
 		async_job "prompt_pure" prompt_pure_async_git_dirty "${PURE_GIT_UNTRACKED_DIRTY:-1}" "${working_tree}"
 	fi
-
 }
 
 prompt_pure_async_callback() {
@@ -332,7 +334,7 @@ prompt_pure_async_callback() {
             local exec_time=$4
         else
             local output=
-            local exec_tim=$3
+            local exec_time=$3
         fi
 
 	case "${job}" in
